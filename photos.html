@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style>
+    img {
+      width: 50%;
+    }
+    </style>
+  </head>
+
+  <body>
+    <h1>Click on the photo to see a random image</h1>
+    <img src="https://img.huffingtonpost.com/asset/595402d41500004500bfb488.jpeg?ops=scalefit_720_noupscale" alt='image' id="changeablePic" onClick="change()">
+
+    <script type="text/javascript">
+      var thingsIlike = [
+      "https://cdn.images.express.co.uk/img/dynamic/72/590x/Roger-Federer-Grand-Slam-titles-992831.jpg?r=1532335243814",
+       "https://media.tiffany.com/is/image/Tiffany/34667977_946901_ED_M?$EcomItemL2$&id=snAqT3&fmt=jpg&fit=constrain,1&wid=1250&hei=1250",
+      "https://i.kinja-img.com/gawker-media/image/upload/s--WFkXeene--/c_scale,f_auto,fl_progressive,q_80,w_800/ol9ceoqxidudap8owlwn.jpg",
+      "https://cdn.vox-cdn.com/uploads/chorus_image/image/59383105/20150915-_Upland_Burger_3.0.0.0.0.jpg",
+      "https://cardiff.imgix.net/__data/assets/image/0005/476033/LA.jpg?w=460&h=259&fit=crop&q=60&auto=format",
+       "https://cdn.britannica.com/300x500/74/194374-131-40F15D56.jpg",
+       "https://i0.heartyhosting.com/radaronline.com/wp-content/uploads/2017/09/greys-anatomy-cast-pp.jpg?resize=540%2C400&ssl=1",
+      "https://m.media-amazon.com/images/M/MV5BZDc1ZTZmMDAtNjA0Yi00ZTkyLWJlMGUtYTBmNWM5YmM5MGE1XkEyXkFqcGdeQXVyNjI0NDkwNjE@._V1_UY268_CR9,0,182,268_AL_.jpg",
+       "https://i.ytimg.com/vi/vxi6NlFoj-o/maxresdefault.jpg",
+       "https://cdn-starbucks.netdna-ssl.com/uploads/images/_framed/a1TtPCA9-2500-1744.jpg"
+      ]
+
+      function change() {
+        var image = document.getElementById('changeablePic');
+        var randomNumber = getRandomInt(0, 10);
+        image.src = thingsIlike[randomNumber];
+      }
+
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+        //The maximum is exclusive and the minimum is inclusive
+      }
+    </script>
+  </body>
+</html>
